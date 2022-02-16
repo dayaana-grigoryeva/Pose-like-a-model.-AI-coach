@@ -56,9 +56,8 @@ for i in range(5):
                 pose_class = results.pose_landmarks.landmark
                 row= []
                 for landmark in range(len(pose_class)):
-                    row.append([pose_class[landmark].x, pose_class[landmark].y, pose_class[landmark].z, pose_class[landmark].visibility])
-                #row=list(np.array(row).flatten())
-                # Append class name 
+                    row.extend([pose_class[landmark].x, pose_class[landmark].y, pose_class[landmark].z, pose_class[landmark].visibility])
+                            # Append class name 
                 row.insert(0, class_name[i])
                 
                 # Export to CSV
